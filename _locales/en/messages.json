@@ -12,3 +12,11 @@
       "description": "Context menu item title"
     }
   }
+{
+  "extensionName": {
+    "message": "Hinglish Translator"
+  },
+  "extensionDescription": {
+    "message": "Translate English to Hinglish using the Groq API."
+  }
+}
