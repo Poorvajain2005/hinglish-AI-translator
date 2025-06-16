@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Hinglish Translator</title>
-  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <div class="container">
+    
+    <!-- Header Section -->
     <div class="header">
       <h1>Hinglish Translator</h1>
       <div class="api-key-section">
-        <div class="api-key-status" id="apiKeyStatus">No API key configured</div>
-        <div class="api-key-actions">
+        <div id="apiKeyStatus" class="api-key-status">No API key configured</div>
+        <div class="api-key-actions button-group">
           <button id="changeApiKey" class="button">Change Key</button>
           <button id="removeApiKey" class="button">Remove Key</button>
         </div>
       </div>
     </div>
 
-    <div class="api-key-container" id="apiKeyContainer" style="display: none;">
+    <!-- API Key Input Section -->
+    <div id="apiKeyContainer" class="api-key-container" style="display: none;">
       <div class="input-group">
-        <input type="password" id="apiKey" placeholder="Enter your Groq API key">
+        <input type="password" id="apiKey" placeholder="Enter your Groq API key" />
         <button id="toggleApiKey" class="icon-button">👁️</button>
       </div>
-      <button id="saveApiKey" class="button primary">Save API Key</button>
+      <button id="saveApiKey" class="button">Save API Key</button>
     </div>
 
-    <div class="settings-section">
+    <!-- Translation Settings Section -->
+    <div class="settings-section section">
       <h2>Translation Settings</h2>
       <div class="setting-group">
         <label for="translationStyle">Translation Style:</label>
-        <select id="translationStyle" class="select">
+        <select id="translationStyle">
           <option value="hinglish">Hinglish (Default)</option>
           <option value="hindi">Hindi (Devanagari)</option>
           <option value="roman">Roman (Hindi in English)</option>
@@ -39,30 +44,31 @@
       </div>
       <div class="setting-group">
         <label for="languageLevel">Language Level:</label>
-        <select id="languageLevel" class="select">
+        <select id="languageLevel">
           <option value="balanced">Balanced (Default)</option>
           <option value="moreHindi">More Hindi</option>
           <option value="moreEnglish">More English</option>
         </select>
       </div>
-      <button id="saveSettings" class="button primary">Save Settings</button>
+      <button id="saveSettings" class="button">Save Settings</button>
     </div>
 
-    <!-- 🌟 NEW TRANSLATION SECTION -->
-    <div class="translation-section">
+    <!-- Live Translation Section -->
+    <div class="translation-section section">
       <h2>Translate Now</h2>
       <textarea id="inputText" placeholder="Enter English text..."></textarea>
-      
+
       <div class="button-group">
-        <button id="translateBtn" class="button primary">Translate</button>
+        <button id="translateBtn" class="button">Translate</button>
         <button id="clearBtn" class="button">Clear</button>
       </div>
-      
+
       <textarea id="outputText" readonly placeholder="Hinglish translation will appear here..."></textarea>
       <button id="copyBtn" class="button">Copy Translation</button>
     </div>
 
-    <div class="instructions">
+    <!-- Instructions Section -->
+    <div class="instructions section">
       <h2>How to Use</h2>
       <ol>
         <li>Select text on any webpage</li>
@@ -75,7 +81,11 @@
         <li>The translation/explanation will appear in a popup</li>
       </ol>
     </div>
+
+    <!-- Status Message -->
+    <div id="statusMessage"></div>
   </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
